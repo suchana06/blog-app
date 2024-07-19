@@ -5,6 +5,7 @@ import authService from "../appwrite/auth";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"
 import { login } from "../store/authSlice";
+import {Input} from "./index";
 function Signup() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ function Signup() {
                     </p>
                     {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-                    <form onSubmit={handleSubmit(create)}>
+                    <form onSubmit={handleSubmit(signup)}>
                         <div className='space-y-5'>
                             <Input
                                 label="Full Name: "
